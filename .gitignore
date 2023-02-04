@@ -2,13 +2,14 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+/Roots of Evil/[Ll]ibrary/
+/Roots of Evil/[Tt]emp/
+/Roots of Evil/[Oo]bj/
+/Roots of Evil/[Bb]uild/
+/Roots of Evil/[Bb]uilds/
+/Roots of Evil/[Ll]ogs/
+/Roots of Evil/[Mm]emoryCaptures/
+/Roots of Evil/[Uu]ser[Ss]ettings/[Ll]ayouts/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta

@@ -1,2 +1,2 @@
 # Roots-Of-Evil
-Submission for a gam jam. Theme: 'Roots'
+Submission for Global Game Jam 2023. Theme: 'Roots'
