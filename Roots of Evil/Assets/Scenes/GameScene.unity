@@ -1182,7 +1182,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: 0.16956298, y: -0.000046700854, z: 0.0000080426635, w: 0.98551935}
+  m_LocalRotation: {x: 0.16955908, y: -0.00004781526, z: 0.000008234579, w: 0.98552}
   m_LocalPosition: {x: 0.000000061875795, y: 0.44604933, z: -9.755782}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2188,7 +2188,6 @@ GameObject:
   - component: {fileID: 1121568636}
   - component: {fileID: 1121568635}
   - component: {fileID: 1121568634}
-  - component: {fileID: 1121568639}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2203,7 +2202,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121568633}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 301a8aab05a41c845a0df28ee88b5e73, type: 3}
   m_Name: 
@@ -2356,69 +2355,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1121568639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121568633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df5cbbbb216753649a886fd5b33a6a10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 1121568636}
-  controls:
-    m_Name: Controls
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 3da51036-8568-4d50-a50b-0b39a33e83f8
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: WASD
-      m_Id: e1c224e2-6308-4de8-b788-836d59bbfa6c
-      m_Path: 2DVector
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Controls
-      m_Flags: 4
-    - m_Name: up
-      m_Id: 5e279bde-8672-4cab-8f1c-acf737342cd0
-      m_Path: <Keyboard>/w
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Controls
-      m_Flags: 8
-    - m_Name: down
-      m_Id: e07ff996-3db6-4b6c-82fc-b0dfc1e19bd4
-      m_Path: <Keyboard>/s
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Controls
-      m_Flags: 8
-    - m_Name: left
-      m_Id: 62f2d611-7f24-4d29-99c3-1535c436152a
-      m_Path: <Keyboard>/a
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Controls
-      m_Flags: 8
-    - m_Name: right
-      m_Id: 67ffca77-12e0-4f69-8d2e-d04f5256abe5
-      m_Path: <Keyboard>/d
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Controls
-      m_Flags: 8
-    m_Flags: 0
-  moveSpeed: 250
 --- !u!1 &1123493787
 GameObject:
   m_ObjectHideFlags: 0

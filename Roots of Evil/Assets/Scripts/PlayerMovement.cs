@@ -45,11 +45,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FaceRight()
     {
-        gameObject.transform.rotation = new Quaternion(0,0,0,0);
+        gameObject.transform.localScale = new Vector3(1, 1, 1);
     }
 
     private void FaceLeft()
     {
-        gameObject.transform.rotation = new Quaternion(0, 180, 0, 0);
+        gameObject.transform.localScale = new Vector3(-1, 1, 1);
     }
 }
