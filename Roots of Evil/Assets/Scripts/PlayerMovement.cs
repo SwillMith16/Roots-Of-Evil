@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     // variables and objects are all declared here
     public Rigidbody rb;
     public InputAction controls;
+    public SpriteRenderer spriteRenderer;
 
     Vector2 moveDirection = Vector3.zero;
     [SerializeField] private float moveSpeed = 100;
@@ -45,11 +46,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void FaceRight()
     {
-        gameObject.transform.localScale = new Vector3(1, 1, 1);
+        //gameObject.transform.localScale = new Vector3(1, 1, 1);
+        spriteRenderer.flipX = false;
     }
 
     private void FaceLeft()
     {
-        gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        //gameObject.transform.localScale = new Vector3(-1, 1, 1);
+        spriteRenderer.flipX = true;
     }
 }
