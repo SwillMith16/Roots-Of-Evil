@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public InputAction controls;
     public SpriteRenderer spriteRenderer;
 
-    Vector2 moveDirection = Vector3.zero;
+    public static Vector2 moveDirection = Vector3.zero;
     [SerializeField] private float moveSpeed = 100;
 
     private void OnEnable()
