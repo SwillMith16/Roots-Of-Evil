@@ -41,7 +41,15 @@ public class PlayerMovement : MonoBehaviour
     // Movement takes place in FixedUpdate()
     private void FixedUpdate()
     {
-        rb.velocity = new Vector3(moveDirection.x * moveSpeed * Time.deltaTime, 0,moveDirection.y * moveSpeed * Time.deltaTime);
+        if (PlayerHealth.currentHealth > 0)
+        {
+            rb.velocity = new Vector3(moveDirection.x * moveSpeed * Time.deltaTime, 0, moveDirection.y * moveSpeed * Time.deltaTime);
+        }
+        else
+        {
+            rb.velocity = Vector3.zero;
+        }
+        
     }
 
     private void FaceRight()
