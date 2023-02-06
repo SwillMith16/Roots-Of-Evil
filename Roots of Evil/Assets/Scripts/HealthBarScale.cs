@@ -20,7 +20,7 @@ public class HealthBarScale : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        barScale = (playerHealth.currentHealth / playerHealth.MaxHealth) * 1000;
+        barScale = (PlayerHealth.currentHealth / playerHealth.maxHealth) * 1000;
         bar.sizeDelta = new Vector2(barScale, 10);
     }
 }
