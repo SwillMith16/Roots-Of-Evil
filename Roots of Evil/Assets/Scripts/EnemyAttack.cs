@@ -1,15 +1,8 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
-[RequireComponent(typeof(SpriteRenderer))]
-public class EnemyAI : MonoBehaviour
+public class EnemyAttack : MonoBehaviour
 {
-    // Enemy prefab components
-    private SpriteRenderer spriteRenderer;
-    private NavMeshAgent navMeshAgent;
-
     // Attack variables
     [SerializeField] private float damage = 5f;
     [SerializeField] private float damageRadius = 1f;
@@ -21,22 +14,16 @@ public class EnemyAI : MonoBehaviour
     private Vector3 playerPos;
     private float distanceToPlayer;
 
-    private void Awake()
+    // Start is called before the first frame update
+    void Awake()
     {
-        // Get components from enemy prefab
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
         // Get player game object
         player = GameObject.Find("Player");
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        // Continuously chase the player and face the player's direction
-        ChasePlayer();
-        FacePlayer();
-
         // Get distance from enemy to player
         playerPos = player.transform.position;
         distanceToPlayer = Vector3.Distance(transform.position, playerPos);
@@ -45,23 +32,6 @@ public class EnemyAI : MonoBehaviour
         if ((distanceToPlayer <= damageRadius) && allowAttack)
         {
             AttackPlayer();
-        }
-    }
-
-    private void ChasePlayer()
-    {
-        navMeshAgent.SetDestination(playerPos);
-    }
-
-    private void FacePlayer()
-    {
-        if (playerPos.x - transform.position.x > 0)
-        {
-            spriteRenderer.flipX = false;
-        }
-        if (playerPos.x - transform.position.x < 0)
-        {
-            spriteRenderer.flipX = true;
         }
     }
 
@@ -78,6 +48,4 @@ public class EnemyAI : MonoBehaviour
         yield return new WaitForSeconds(attackCooldownTime);
         allowAttack = true;
     }
-
-    
 }

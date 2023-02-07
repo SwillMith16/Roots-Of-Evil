@@ -1,27 +1,21 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
+
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(SpriteRenderer))]
-public class EnemyAI : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     // Enemy prefab components
     private SpriteRenderer spriteRenderer;
     private NavMeshAgent navMeshAgent;
 
-    // Attack variables
-    [SerializeField] private float damage = 5f;
-    [SerializeField] private float damageRadius = 1f;
-    [SerializeField] private float attackCooldownTime = 2;
-    private bool allowAttack = true;
-
     // Player variables
     private GameObject player;
     private Vector3 playerPos;
-    private float distanceToPlayer;
 
-    private void Awake()
+    // Start is called before the first frame update
+    void Awake()
     {
         // Get components from enemy prefab
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -31,21 +25,13 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.Find("Player");
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
         // Continuously chase the player and face the player's direction
+        playerPos = player.transform.position;
         ChasePlayer();
         FacePlayer();
-
-        // Get distance from enemy to player
-        playerPos = player.transform.position;
-        distanceToPlayer = Vector3.Distance(transform.position, playerPos);
-
-        // If player is within range and attack cooldown is not active, attack the player
-        if ((distanceToPlayer <= damageRadius) && allowAttack)
-        {
-            AttackPlayer();
-        }
     }
 
     private void ChasePlayer()
@@ -64,20 +50,4 @@ public class EnemyAI : MonoBehaviour
             spriteRenderer.flipX = true;
         }
     }
-
-    private void AttackPlayer()
-    {
-        Debug.Log("Attack Player");
-        PlayerHealth.TakeDamage(damage);
-        StartCoroutine(AttackCooldown());
-    }
-
-    IEnumerator AttackCooldown()
-    {
-        allowAttack = false;
-        yield return new WaitForSeconds(attackCooldownTime);
-        allowAttack = true;
-    }
-
-    
 }
